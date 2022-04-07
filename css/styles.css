@@ -9,6 +9,7 @@
   --third-bg-color: #f5f4fa;
   --primary-border-color: #eeeeee;
   --secondary-border-color: #ececec;
+  --media-icon-color: #afb1b8;
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -112,10 +113,31 @@ img {
   align-items: center;
   margin-left: auto;
 }
+
+.mail-icon {
+  fill: currentColor;
+  width: 16px;
+  height: 12px;
+  display: inline-block;
+  stroke-width: 0;
+  stroke: currentColor;
+  margin-right: 10px;
+}
+.tel-icon {
+  fill: currentColor;
+  width: 10px;
+  height: 16px;
+  display: inline-block;
+  stroke-width: 0;
+  stroke: currentColor;
+  margin-right: 10px;
+}
 .contact-item:not(:last-child) {
   margin-right: 50px;
 }
 .contact {
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: var(--primary-text-color);
   font-weight: 500;
@@ -130,8 +152,23 @@ img {
 
 /* Hero section */
 .hero {
+}
+.hero-thumb {
   background: var(--secondary-bg-color);
   padding: 200px 0px;
+  background-image: linear-gradient(
+      to left,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/hero-bg-img.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 600px;
 }
 .hero-title {
   font-weight: 900;
@@ -160,20 +197,34 @@ img {
   border-radius: 4px;
 }
 /* Section "The main principles" */
-.peculiarities {
+.features {
   padding-top: 94px;
 }
 .hiden-title {
   display: none;
 }
-.principle-card {
+.feature-card {
   /* width: 270px; */
   flex-basis: calc((100%-90px) / 4);
 }
-.principle-card:not(:last-child) {
+.feature-card:not(:last-child) {
   margin-right: 30px;
 }
-.principle-title {
+.future-icon-thumb {
+  width: auto;
+  height: 120px;
+  background-color: var(--third-bg-color);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.future-icon {
+  width: 70px;
+  height: 70px;
+}
+.feature-title {
   font-size: 14px;
   font-weight: 700;
   line-height: 1.14;
@@ -181,7 +232,7 @@ img {
   color: var(--secondary-text-color);
   margin-bottom: 10px;
 }
-.principle-description {
+.feature-description {
   line-height: 1.71;
   margin-bottom: 0;
 }
@@ -233,13 +284,97 @@ img {
   font-size: 16px;
   line-height: 1.2;
   text-align: center;
-  margin-bottom: 0;
+  margin-bottom: 16px;
+}
+.media-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.media-item:not(:last-child) {
+  margin-right: 10px;
+}
+.media-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+.media-link:hover,
+.media-link:focus {
+  background-color: var(--active-text-color);
+}
+.media-icon {
+  height: 20px;
+  width: 20px;
+  fill: var(--media-icon-color);
+}
+.media-icon:hover,
+.media-icon:focus {
+  fill: var(--third-text-color);
+}
+/* Section clients */
+.clients-list {
+  display: flex;
+}
+.clients-item {
+  flex-basis: calc((100%-150px) / 6);
+}
+.clients-item:not(:last-child) {
+  margin-right: 30px;
+}
+.clients-link {
+  display: flex;
+  height: 92px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--media-icon-color);
+  border-radius: 4px;
+  /* outline: red solid 2px; */
+}
+.clients-link:hover,
+.clients-link:focus {
+  border-color: var(--active-text-color);
+}
+.clients-icon {
+  fill: var(--media-icon-color);
+}
+.clients-icon:hover,
+.clients-icon:focus {
+  fill: var(--active-text-color);
+}
+.clients-icon.first {
+  width: 41px;
+}
+.clients-icon.second {
+  width: 40px;
+}
+.clients-icon.third {
+  width: 43px;
+}
+.clients-icon.fourth {
+  width: 84px;
+}
+.clients-icon.fifth {
+  width: 62px;
+}
+.clients-icon.sixth {
+  width: 94px;
 }
 /* Footer */
 footer {
   background-color: var(--secondary-bg-color);
   padding-top: 60px;
   padding-bottom: 60px;
+}
+.conteiner.flex-footer {
+  display: flex;
+  align-items: baseline;
+}
+.contact-info {
+  margin-right: 70px;
 }
 .nav-logo-bottom {
   color: var(--secondary-text-color);
@@ -272,6 +407,25 @@ footer {
 .address {
   color: var(--third-text-color);
   margin-bottom: 9px;
+}
+.subscribe {
+  display: inline-block;
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--third-text-color);
+  margin-bottom: 20px;
+}
+
+.media-link.infooter {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.media-link.infooter:hover,
+.media-link.infooter:focus {
+  background-color: var(--active-text-color);
+}
+.media-icon.infooter {
+  fill: var(--third-text-color);
 }
 
 /* Portfolio page */
